@@ -8,6 +8,11 @@ Episerver Forms Nuget feed:
 </p>
 
 <p>
-This translation file is for version 2.0.0.2
+Translation file is for version 2.0.0.2
 <a href="https://github.com/huilaaja/Episerver.Forms_FI/blob/master/2.0.0.2/EPiServer.Forms_FI.xml">EPiServer.Forms_FI.xml</a>
+</p>
+
+<p>
+Translation file is for version 2.1.0.2
+<a href="https://github.com/huilaaja/Episerver.Forms_FI/blob/master/2.1.0.2/EPiServer.Forms_FI.xml">EPiServer.Forms_FI.xml</a>
 </p>

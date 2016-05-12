@@ -42,7 +42,10 @@
           <finalizedonly>Vain lopulliset lomaketiedot</finalizedonly>
           <deleteselecteditems>Poista</deleteselecteditems>
           <deleteconfirmation>Haluatko poistaa valitut tiedot?</deleteconfirmation>
-
+          <nopostid>Ei löytynyt lähetys datan ID tietoa sen poistamiseksi.</nopostid>
+          <couldnotgetassociateform>Kyseistä lomaketta ei löytynyt.</couldnotgetassociateform>
+          <deletesuccessful>Lähetetyn datan poistaminen onnnistui.</deletesuccessful>
+          
           <accessdenied>Sinulla ei ole oikeutta tarkastella näitä tietoja.</accessdenied>
 
           <submittime>Aika</submittime>
@@ -191,6 +194,10 @@
             <denymultisubmit>Lähetit jo tämän lomakkeen tiedot.</denymultisubmit>
             <submitsuccess>Lomakkeen lähetys onnistui.</submitsuccess>
             <validationfailformat>Tiedon "{0}" validointi epäonnistui kentälle {1}</validationfailformat>
+            <thereisnoformguid>Datan lähetys EPÄONNISTUI: Kyseisellä Guid-arvolle ei löytynyt lomaketta.</thereisnoformguid>
+            <couldnotgetform>Datan lähetys EPÄONNISTUI: Ei löytynyt lomaketta haulla Id = {0}.</couldnotgetform>
+            <submitcancelled>TEKNINEN TIETO: Lähetys on keskeytynyt. Syy: </submitcancelled>
+
           </formsubmission>
         </messages>
         <dependcondition>
@@ -227,7 +234,6 @@
           <editwebhook>Muokkaa webhook:ia</editwebhook>
           <selectpage>Valitse sivu</selectpage>
           <usemanualinput>Syötä käsin</usemanualinput>
-          <errorconditionalstepcannotcontainrequiredelement>Tämä lomakevaihe ei saisi olla riippuvainen toisesta lomake-elementistä, koska se sisältää pakollisen elementin [{0}].</errorconditionalstepcannotcontainrequiredelement>
           <cannotbuildformmodel>Lomaketta ei voi esittää. Huom: FormContainerBlock:ia ei saa käyttää ominaisuutena.</cannotbuildformmodel>
         </editview>
 
@@ -248,6 +254,8 @@
           <captchalabel>Sanavarmennus</captchalabel>
           <malformstepconfigruation>Kelvoton lomakevaiheen konfigurointi. Jotkin vaiheet on liitetty sivuihin, kun taas toisia ei ole liitetty mihinkään tai on liitetty sisältöelementteihin, joilla ei ole julkista URL:ia.</malformstepconfigruation>
           <commonvalidationfail>Tämän kentän arvo ei ole sallittu.</commonvalidationfail>
+          <readonlymode>Päivitämme tietokantaa. Tiedon lähetys ei tällä hetkellä onnistu.</readonlymode>
+
         </viewmode>
         <contentediting>
           <optionitem>
@@ -386,6 +394,10 @@
             <caption>Näytä sivu lomakkeen lähetyksen jälkeen</caption>
             <help>Valitse lomakkeen lähetyksen jälkeen näytettävä sivu.</help>
           </redirecttopage>
+          <image>
+            <caption>Kuva</caption>
+            <help>Valitse kuva lähetä napille.</help>
+          </image>
           <submitsuccessmessage>
             <caption>Näytä viesti lomakkeen lähettämisen jälkeen (ei näytetä, jos lähetyksen jälkeen tapahtuu uudelleenohjaus)</caption>
             <help>Kirjoita teksti, joka näkyy lomakkeen lähetyksen jälkeen. Teksti näkyy vain jos \"Redirect to page\" on tyhjä.</help>
