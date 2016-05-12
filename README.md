@@ -4,7 +4,7 @@
 
 <p>
 Episerver Forms Nuget feed: 
-<a href="https://nuget.episerver.com/en/OtherPages/Package/?packageId=EPiServer.Forms>https://nuget.episerver.com/en/OtherPages/Package/?packageId=EPiServer.Forms</a>
+<a href="https://nuget.episerver.com/en/OtherPages/Package/?packageId=EPiServer.Forms">https://nuget.episerver.com/en/OtherPages/Package/?packageId=EPiServer.Forms</a>
 </p>
 
 <p>
