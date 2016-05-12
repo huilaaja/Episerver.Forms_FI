@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+  <language name="English" id="en">
+    <episerver>
+      <forms>
+        <contenttypescomponent>
+          <title>Lomake-elementit</title>
+          <description>Näytä kaikki lomake-elementtityypit Episerver Forms:issa</description>
+        </contenttypescomponent>
+        <formscomponent>
+          <title>Lomakkeet</title>
+          <description>Hallitse sivuston lomakkeita</description>
+          <command>
+            <create>
+              <label>Uusi lomake</label>
+            </create>
+            <viewdata>
+              <label see="/episerver/forms/formdataview/name" />
+            </viewdata>
+          </command>
+          <messages>
+            <nocontent>Kansio ei sisällä yhtään lomaketta.</nocontent>
+          </messages>
+        </formscomponent>
+        <formdataview>
+          <name>Täytetyt lomakkeet</name>
+          <description>Tarkastele täytettyjä lomakkeita</description>
+          <heading>Täytetyt lomakkeet</heading>
+
+          <begindate>Päivästä</begindate>
+          <enddate>Päivään</enddate>
+          <search>Hae</search>
+          <nodata>Tietoja ei löydy</nodata>
+
+          <export>Vie tiedostomuotoon...</export>
+          <exportasxml>XML</exportasxml>
+          <exportasxmldesc>Vie lomaketiedot XML-tiedostoon</exportasxmldesc>
+          <exportascsv>CSV</exportascsv>
+          <exportascsvdesc>Vie lomaketiedot CSV-tiedostoon</exportascsvdesc>
+          <exportasjson>JSON</exportasjson>
+          <exportasjsondesc>Vie lomaketiedot JSON-muotoon</exportasjsondesc>
+          <finalizedonly>Vain lopulliset lomaketiedot</finalizedonly>
+          <deleteselecteditems>Poista</deleteselecteditems>
+          <deleteconfirmation>Haluatko poistaa valitut tiedot?</deleteconfirmation>
+
+          <accessdenied>Sinulla ei ole oikeutta tarkastella näitä tietoja.</accessdenied>
+
+          <submittime>Aika</submittime>
+          <submituser>Käyttäjä</submituser>
+          <hostedpage>Lomakkeen sijainti</hostedpage>
+          <finalizedsubmission>Lopullinen lomaketieto</finalizedsubmission>
+        </formdataview>
+        <formscontentarea>
+          <emptyactions>
+            <actions>
+              <createnewformselement>selaa</createnewformselement>
+            </actions>
+            <template>Lomake-elementtejä voi pudottaa tähän tai {createnewformselement}.</template>
+            <templatewithoutcreate>Voit pudottaa sisältöä tähän.</templatewithoutcreate>
+          </emptyactions>
+        </formscontentarea>
+        <fieldselector>
+          <title>Valitse linkitetty kenttä</title>
+        </fieldselector>
+        <submissionactors>
+          <episerver.forms.implementation.actors.callwebhookaftersubmissionactor>
+            <displayname>Suorita webhook lomakkeen lähetyksen jälkeen</displayname>
+          </episerver.forms.implementation.actors.callwebhookaftersubmissionactor>
+          <episerver.forms.implementation.actors.sendemailaftersubmissionactor>
+            <displayname>Lähetä sähköposti lomakkeen lähetyksen jälkeen</displayname>
+          </episerver.forms.implementation.actors.sendemailaftersubmissionactor>
+        </submissionactors>
+        <validators>
+          <episerver.forms.implementation.validation.requiredvalidator>
+            <displayname>Pakollinen</displayname>
+            <message>Kenttä on pakollinen.</message>
+          </episerver.forms.implementation.validation.requiredvalidator>
+          <episerver.forms.implementation.validation.regularexpressionvalidator>
+            <displayname>Regular expression</displayname>
+            <message>Tämän kentän sisältö pitäisi olla muodossa "{0}".</message>
+          </episerver.forms.implementation.validation.regularexpressionvalidator>
+          <episerver.forms.implementation.validation.captchavalidator>
+            <displayname>Captcha</displayname>
+            <message>Kirjoita merkit, jotka näkyvät kuvassa.</message>
+          </episerver.forms.implementation.validation.captchavalidator>
+          <episerver.forms.implementation.validation.allowedextensionsvalidator>
+            <displayname>Sallitut tiedostotunnisteet</displayname>
+            <message>Ladattava tiedosto on viallinen tai tukemattomassa muodossa.</message>
+            <allowedextensionsmessage>Ladattava tiedosto on viallinen tai tukemattomassa muodossa. Tiedoston tulisi olla muodossa {0}.</allowedextensionsmessage>
+          </episerver.forms.implementation.validation.allowedextensionsvalidator>
+          <episerver.forms.implementation.validation.maxfilesizevalidator>
+            <displayname>Suurin sallittu tiedostokoko</displayname>
+            <message see="/episerver/forms/messages/fileupload/overfilesize" />
+          </episerver.forms.implementation.validation.maxfilesizevalidator>
+          <episerver.forms.implementation.validation.emailvalidator>
+            <displayname>Sähköposti</displayname>
+            <message>Täytä validi sähköpostiosoite.</message>
+          </episerver.forms.implementation.validation.emailvalidator>
+          <episerver.forms.implementation.validation.urlvalidator>
+            <displayname>Url</displayname>
+            <message>Täytä validi URL.</message>
+          </episerver.forms.implementation.validation.urlvalidator>
+
+          <episerver.forms.implementation.validation.dateddmmyyyyvalidator>
+            <displayname>Päivämäärä (PP/KK/VVVV)</displayname>
+            <message>Anna päivämäärä muodossa PP/KK/VVVV.</message>
+          </episerver.forms.implementation.validation.dateddmmyyyyvalidator>
+          <episerver.forms.implementation.validation.datemmddyyyyvalidator>
+            <displayname>Päivämäärä (KK/PP/VVVV)</displayname>
+            <message>Anna päivämäärä muodossa KK/PP/VVVV.</message>
+          </episerver.forms.implementation.validation.datemmddyyyyvalidator>
+          <episerver.forms.implementation.validation.dateyyyymmddvalidator>
+            <displayname>Päivämäärä (VVVV-KK-PP)</displayname>
+            <message>Anna päivämäärä muodossa VVVV-KK-PP.</message>
+          </episerver.forms.implementation.validation.dateyyyymmddvalidator>
+
+          <episerver.forms.implementation.validation.integervalidator>
+            <displayname>Kokonaisluku</displayname>
+            <message>Anna validi kokonaisluku.</message>
+          </episerver.forms.implementation.validation.integervalidator>
+          <episerver.forms.implementation.validation.positiveintegervalidator>
+            <displayname>Positiivinen kokonaisluku</displayname>
+            <message>Anna validi positiivinen kokonaisluku.</message>
+          </episerver.forms.implementation.validation.positiveintegervalidator>
+
+          <elementselfvalidator>
+            <unexpectedvalueisnotaccepted>Vääränlaista arvoa ei hyväksytä.</unexpectedvalueisnotaccepted>
+          </elementselfvalidator>
+
+        </validators>
+        <visitordatasources>
+          <episerver.forms.implementation.visitordata.ipaddressvisitordatasource>
+            <displayname>IP-osoite</displayname>
+          </episerver.forms.implementation.visitordata.ipaddressvisitordatasource>
+          <episerver.forms.implementation.visitordata.geovisitordatasource>
+            <displayname>Maantieteellinen</displayname>
+            <properties>
+              <city>Kaupunki</city>
+              <country_code>Maakoodi</country_code>
+              <country_name>Maan nimi</country_name>
+              <ip>IP</ip>
+              <latitude>Leveysasteet</latitude>
+              <longitude>Pituusasteet</longitude>
+              <metro_code>Metropolikoodi</metro_code>
+              <region_code>Aluekoodi</region_code>
+              <region_name>Alueen nimi</region_name>
+              <time_zone>Aikavyöhyke</time_zone>
+              <zip_code>Postinumero</zip_code>
+            </properties>
+          </episerver.forms.implementation.visitordata.geovisitordatasource>
+          <episerver.forms.implementation.visitordata.profilevisitordatasource>
+            <displayname>Profiili</displayname>
+            <properties>
+              <address>Katuosoite</address>
+              <zipcode>Postinumero</zipcode>
+              <locality>Sijainti</locality>
+              <email>Sähköposti</email>
+              <firstname>Etunimi</firstname>
+              <lastname>Sukunimi</lastname>
+              <language>Kieli</language>
+              <country>Maa</country>
+              <company>Yritys</company>
+              <title>Titteli</title>
+            </properties>
+          </episerver.forms.implementation.visitordata.profilevisitordatasource>
+          <episerver.forms.implementation.visitordata.useragentvisitordatasource>
+            <displayname>User agent</displayname>
+            <properties>
+              <ismobiledevice>Mobiililaite</ismobiledevice>
+              <useragent>User agent</useragent>
+            </properties>
+          </episerver.forms.implementation.visitordata.useragentvisitordatasource>
+          <episerver.forms.implementation.visitordata.visitorgroupvisitordatasource>
+            <displayname>Vierailijaryhmät</displayname>
+            <properties>
+              <id>Id</id>
+              <name>Nimi</name>
+            </properties>
+          </episerver.forms.implementation.visitordata.visitorgroupvisitordatasource>
+        </visitordatasources>
+
+        <messages>
+          <fileupload>
+            <overfilesize>Ladattavan tiedoston koko saa olla korkeintaan {0} MB.</overfilesize>
+            <invalidfiletype>Ladattava tiedosto on viallinen tai tukemattomassa muodossa.</invalidfiletype>
+            <postedfile>(Viimeksi ladattu tiedosto - {0})</postedfile>
+          </fileupload>
+          <formsubmission>
+            <outdatedforminit>Sessiosi on vanhentunut etkä voi tarkastella lomakkeita. Lataa sivu uudelleen voidaksesi jatkaa.</outdatedforminit>
+            <requirelogin>Kirjautuminen vaaditaan lomakkeen lähetystä varten.</requirelogin>
+            <denymultisubmit>Lähetit jo tämän lomakkeen tiedot.</denymultisubmit>
+            <submitsuccess>Lomakkeen lähetys onnistui.</submitsuccess>
+            <validationfailformat>Tiedon "{0}" validointi epäonnistui kentälle {1}</validationfailformat>
+          </formsubmission>
+        </messages>
+        <dependcondition>
+          <notapplicable>Ei sovellettavissa</notapplicable>
+          <matchregularexpression>Luo sääntö käyttämällä regular expression:ia</matchregularexpression>
+          <equals>On yhtä kuin</equals>
+          <notequals>On eri kuin</notequals>
+          <contains>Sisältää</contains>
+          <notcontains>Ei sisällä</notcontains>
+        </dependcondition>
+        <imagechoiceitems>
+          <emptyactions>
+            <actions>
+              <createnewitem>Luo linkki kuvaan</createnewitem>
+            </actions>
+            <template>Pudota kuvasisältöä tähän.&lt;br/&gt;Voit myös {createnewitem}.</template>
+          </emptyactions>
+          <menutooltip>Näytä valikko</menutooltip>
+        </imagechoiceitems>
+        <editview>
+          <notconfigured>Ei vielä konfiguroitu</notconfigured>
+
+          <insertplaceholder>Lisää paikkamerkintäteksti</insertplaceholder>
+          <selectanitem>Tee valinta</selectanitem>
+          
+          <externalsystems>Kenttien linkittäminen ulkoiseen järjestelmään</externalsystems>
+          <connecteddatasource>Yhdistä ulkoiseen järjestelmään</connecteddatasource>
+
+
+
+          <createemailtemplate>Luo sähköpostipohja</createemailtemplate>
+          <editemailtemplate>Muokkaa sähköpostipohjaa</editemailtemplate>
+          <addwebhook>Lisää webhook</addwebhook>
+          <editwebhook>Muokkaa webhook:ia</editwebhook>
+          <selectpage>Valitse sivu</selectpage>
+          <usemanualinput>Syötä käsin</usemanualinput>
+          <errorconditionalstepcannotcontainrequiredelement>Tämä lomakevaihe ei saisi olla riippuvainen toisesta lomake-elementistä, koska se sisältää pakollisen elementin [{0}].</errorconditionalstepcannotcontainrequiredelement>
+          <cannotbuildformmodel>Lomaketta ei voi esittää. Huom: FormContainerBlock:ia ei saa käyttää ominaisuutena.</cannotbuildformmodel>
+        </editview>
+
+        <viewmode>
+          <stepnavigation>
+            <previous>Edellinen vaihe</previous>
+            <next>Seuraava vaihe</next>
+            <page>Vaihe</page>
+          </stepnavigation>
+          <untitled>Nimetön</untitled>
+          <selection>
+            <selectanoption>-- Valitse vaihtoehto --</selectanoption>
+            <selectoptions>-- Vaihtoehdot --</selectoptions>
+          </selection>
+          <reset>Tyhjennä lomake</reset>
+          <submit>Lähetä</submit>
+          <refreshcaptcha>Lataa captcha uudelleen</refreshcaptcha>
+          <captchalabel>Sanavarmennus</captchalabel>
+          <malformstepconfigruation>Kelvoton lomakevaiheen konfigurointi. Jotkin vaiheet on liitetty sivuihin, kun taas toisia ei ole liitetty mihinkään tai on liitetty sisältöelementteihin, joilla ei ole julkista URL:ia.</malformstepconfigruation>
+          <commonvalidationfail>Tämän kentän arvo ei ole sallittu.</commonvalidationfail>
+        </viewmode>
+        <contentediting>
+          <optionitem>
+            <caption>Valinta</caption>
+            <value>Arvo</value>
+            <checked>Valittu oletuksena</checked>
+            <containsinvalidcharacter>Pilkku (,) ei ole sallittu merkki.</containsinvalidcharacter>
+          </optionitem>
+          <emailtemplateactor>
+            <fromemail>Lähettäjä</fromemail>
+            <fromemaildescription>Lähettäjän sähköpostiosoite</fromemaildescription>
+            <toemails>Vastaanottaja</toemails>
+            <toemailsdescription>Vastaanottajan sähköpostiosoite tai sähköpostiosoitteen sisältävän lomakekentän nimi (vahvistusviestejä varten)</toemailsdescription>
+            <subject>Aihe</subject>
+            <subjectdescription>Sähköpostiviestin aiherivi. Voit käyttää muotoa #FIELDNAME# sisällyttääksesi lomakkeen kentän sisällön.</subjectdescription>
+            <body>Viesti</body>
+            <bodydescription>Sähköpostin viestiosa. Voit käyttää muotoa #FIELDNAME# sisällyttääksesi lomakkeen kentän sisällön tai #SUMMARY# liittääksesi koosteen kaikkien lomakekenttien arvoista.</bodydescription>
+          </emailtemplateactor>
+          <webhookactor>
+            <url>Webhook URL</url>
+            <urldescription>Webhook URL, johon lähettää lomakkeen tiedot; tulisi käyttää http- tai https-protokollaa.</urldescription>
+            <jsonformat>POST:aa data JSON-muodossa</jsonformat>
+          </webhookactor>
+          <validation>
+            <greaterthanequaltoerrorformat>{0} pitää olla &gt;= arvo kentässä {1}.</greaterthanequaltoerrorformat>
+            <lessthanequaltoerrorformat>{0} pitää olla &lt;= arvo kentässä {1}.</lessthanequaltoerrorformat>
+            <inrangeerrorformat>"{0}" ei ole validi arvo kentälle {1}. Vain numero on sallittu, ja {1} täytyy olla välillä [{2} - {3}].</inrangeerrorformat>
+            <stepinrangeerrorformat>{0} pitää olla &gt;= 1 ja &lt;= {2} - {1}.</stepinrangeerrorformat>
+            <positiveinteger>Vain positiivinen numero on sallittu arvo.</positiveinteger>
+          </validation>
+        </contentediting>
+      </forms>
+    </episerver>
+
+
+    <contentrepositories>
+      <formscontenttypes>
+        <customselecttitle>Lomakkeen sisältötyyppi</customselecttitle>
+        <name>Lomakkeen sisältötyypit</name>
+      </formscontenttypes>
+      <forms>
+        <customselecttitle>Lomake</customselecttitle>
+        <name>Lomakkeet</name>
+      </forms>
+    </contentrepositories>
+    <contenttypes>
+      <icontentdata>
+        <properties>
+          <!--InputElementBlockBase-->
+          <validators>
+            <caption>Validaattorit</caption>
+            <help>Validaattorit tälle lomake-elementille</help>
+          </validators>
+          <!--LabeledElementBlockBase-->
+          <label>
+            <caption>Tunnisteteksti</caption>
+            <help>Tunniste kunkin HTML-elementin edessä.</help>
+          </label>
+          <placeholder>
+            <caption>Paikkamerkintäteksti</caption>
+            <help>Kirjoita tähän teksti, jonka haluat käyttäjän näkevän vihjeenä kentän sisällöstä. Paikkamerkintäteksti ei tallennu tietokantaan. Käyttäjän täyttämä teksti korvaa sen.</help>
+          </placeholder>
+          <predefinedvalue>
+            <caption>Oletussisältö</caption>
+            <help>Kirjoita tähän tekstikentän oletusteksti. Lomakkeen täyttäjän oma teksti korvaa tämän tekstin. Jos sekä paikkamerkintäteksti että oletusteksti on määritelty, oletusteksti näkyy lomakkeen tekstikentässä.</help>
+          </predefinedvalue>
+          <!--SelectionElementBlockBase-->
+          <allowmultiselect>
+            <caption>Voi valita useita vaihtoehtoja</caption>
+            <help>Anna valita useita vaihtoehtoja</help>
+          </allowmultiselect>
+          <feed>
+            <caption>Vaihtoehdot</caption>
+            <help>Valitse ulkoisen listauksen lähde</help>
+          </feed>
+          <items>
+            <caption>Vaihtoehdot</caption>
+          </items>
+        </properties>
+      </icontentdata>
+
+      <blockbase>
+        <create>Uusi lomakekenttä</create>
+        <newitemdefaultname>Uusi lomakenkenttä</newitemdefaultname>
+
+        <properties>
+          <!--BlockBase-->
+          <description>
+            <caption>Vihje</caption>
+            <help>Näyttää vihjeen valitun elementin täyttämisestä.</help>
+          </description>
+        </properties>
+      </blockbase>
+
+      <formcontainerblock>
+        <name>Lomakeaihio</name>
+        <description></description>
+        <newitemdefaultname>Uusi lomakeaihio</newitemdefaultname>
+        <forthis>Tälle lomakkeelle</forthis>
+        <properties>
+          <title>
+            <caption>Lomakkeen otsikko</caption>
+          </title>
+          <description>
+            <caption>Kuvaus</caption>
+            <help>Näyttää kuvauksen lomakkeen otsikon alla.</help>
+          </description>
+          <elementsarea>
+            <caption>Lomake-elementit</caption>
+          </elementsarea>
+          <allowanonymoussubmission>
+            <caption>Salli lomakkeen lähetys kirjautumatta</caption>
+            <help>Salli kirjautumattoman käyttäjän täyttää ja lähettää lomake.</help>
+          </allowanonymoussubmission>
+          <allowmultiplesubmission>
+            <caption>Salli useita lomakkeen lähetyksiä samasta IP-osoitteesta tai evästeestä</caption>
+            <help>Salli useita lomakkeen lähetyksiä samasta IP-osoitteesta tai evästeestä.</help>
+          </allowmultiplesubmission>
+          <allowexposingdatafeeds>
+            <caption>Salli pääsy lomakedataan service API:n kautta</caption>
+            <help>Anna kehittäjille (tai toisille sovelluksille) mahdollisuus käsitellä lomakedataa käyttämällä Forms Service API -rajapintaa.</help>
+          </allowexposingdatafeeds>
+          <shownavigationbar>
+            <caption>Näytä navigonintipalkki monivaihelomakkeiden yhteydessä</caption>
+            <help>Näytä navigointipalkki kussakin lomakkeen vaiheessa.</help>
+          </shownavigationbar>
+          <showsummarizeddata>
+            <caption>Näytä vahvistusviesti lomakkeen lähettämisen jälkeen</caption>
+            <help>Näytä kooste lomakkeen kentistä ennen lähettämistä tietokantaan.</help>
+          </showsummarizeddata>
+          <confirmationmessage>
+            <caption>Vahvistusviesti</caption>
+            <help>Tämä viesti näytetään lomakkeen täyttäjälle ennen lomakkeen lähettämistä.</help>
+          </confirmationmessage>
+          <redirecttopage>
+            <caption>Näytä sivu lomakkeen lähetyksen jälkeen</caption>
+            <help>Valitse lomakkeen lähetyksen jälkeen näytettävä sivu.</help>
+          </redirecttopage>
+          <submitsuccessmessage>
+            <caption>Näytä viesti lomakkeen lähettämisen jälkeen (ei näytetä, jos lähetyksen jälkeen tapahtuu uudelleenohjaus)</caption>
+            <help>Kirjoita teksti, joka näkyy lomakkeen lähetyksen jälkeen. Teksti näkyy vain jos \"Redirect to page\" on tyhjä.</help>
+          </submitsuccessmessage>
+          <allowtostoresubmissiondata>
+            <caption>Talleta lomaketiedot</caption>
+            <help>Talleta lomaketiedot (Episerver-tietokantaan).</help>
+          </allowtostoresubmissiondata>
+        </properties>
+      </formcontainerblock>
+      <selectionelementblock>
+        <name>Valinta</name>
+        <description></description>
+        <newitemdefaultname>Uusi valinta</newitemdefaultname>
+        <properties>
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+        </properties>
+      </selectionelementblock>
+      <imagechoiceelementblock>
+        <name>Kuvavalinta</name>
+        <description></description>
+        <newitemdefaultname>Uusi kuvavalinta</newitemdefaultname>
+        <properties>
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+
+          <showselectioninputcontrol>
+            <caption>Näytä rasti tai valintanappula</caption>
+          </showselectioninputcontrol>
+          <items>
+            <caption>Kuvavalinta</caption>
+            <help>Kuvakooste</help>
+          </items>
+        </properties>
+      </imagechoiceelementblock>
+      <textareaelementblock>
+        <name>Tekstialue</name>
+        <newitemdefaultname>Uusi tekstialue</newitemdefaultname>
+        <properties>
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+        </properties>
+      </textareaelementblock>
+      <choiceelementblock>
+        <name>Yksi tai useampi vaihtoehto</name>
+        <description></description>
+        <newitemdefaultname>Uusi yksi tai useampi vaihtoehto</newitemdefaultname>
+        <properties>
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+        </properties>
+      </choiceelementblock>
+      <captchaelementblock>
+        <name>Captcha</name>
+        <description></description>
+        <newitemdefaultname>Uusi captcha</newitemdefaultname>
+        <properties>
+
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+
+          <imagewidth>
+            <caption>Kuvan leveys</caption>
+          </imagewidth>
+          <imageheight>
+            <caption>Kuvan korkeus</caption>
+          </imageheight>
+          <textlength>
+            <caption>Tekstin pituus</caption>
+          </textlength>
+        </properties>
+      </captchaelementblock>
+      <fileuploadelementblock>
+        <name>Tiedoston lataus</name>
+        <description></description>
+        <newitemdefaultname>Uusi tiedoston lataus</newitemdefaultname>
+        <properties>
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+          <filesize>
+            <caption>Suurin sallittu tiedostokoko (Mt)</caption>
+            <help>Suurin sallittu tiedostokoko (Mt). Oletus on 4Mt. Salliaksesi suuremmat tiedostokoot tee muutos web.config-tiedoston kohtaan ASP.NET requestLimits.maxAllowedContentLength.</help>
+          </filesize>
+          <filetypes>
+            <caption>Sallitut tiedostomuodot (jpg, png, pdf, ...)</caption>
+            <help>Kirjoita pilkulla eroteltu lista tiedostotunnisteista, kuten "jpg, png, pdf" jne.</help>
+          </filetypes>
+        </properties>
+      </fileuploadelementblock>
+      <textboxelementblock>
+        <name>Teksti</name>
+        <description></description>
+        <newitemdefaultname>Uusi teksti</newitemdefaultname>
+        <properties>
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+        </properties>
+      </textboxelementblock>
+      <predefinedhiddenelementblock>
+        <name>Piilotettu ennalta annettu arvo</name>
+        <description></description>
+        <newitemdefaultname>Uusi piilotettu ennalta annettu arvo</newitemdefaultname>
+      </predefinedhiddenelementblock>
+      <numberelementblock>
+        <name>Numero</name>
+        <description></description>
+        <newitemdefaultname>Uusi numero</newitemdefaultname>
+        <properties>
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+        </properties>
+      </numberelementblock>
+      <visitordatahiddenelementblock>
+        <name>Piilotettu kävijäprofilointi</name>
+        <description></description>
+        <newitemdefaultname>Uusi piilotettu kävijäprofilointi</newitemdefaultname>
+        <properties>
+          <visitordatasources>
+            <caption>Kerää kävijän tiedot automaattisesti</caption>
+            <help>Valitse minkä tyyppistä tietoa haluat kävijästä kerättävän.</help>
+          </visitordatasources>
+        </properties>
+      </visitordatahiddenelementblock>
+      <feedhiddenelementblock>
+        <name>Piilotettu syötearvo</name>
+        <description></description>
+        <newitemdefaultname>Uusi piilotettu syötearvo</newitemdefaultname>
+        <properties>
+          <value>
+            <caption>Arvo</caption>
+            <help>Valitse kentän arvo.</help>
+          </value>
+        </properties>
+      </feedhiddenelementblock>
+      <resetbuttonelementblock>
+        <name>Tyhjennä-nappi</name>
+        <description></description>
+        <newitemdefaultname>Uusi tyhjennä-nappi</newitemdefaultname>
+        <properties>
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+        </properties>
+      </resetbuttonelementblock>
+      <submitbuttonelementblock>
+        <name>Lähetä-nappi</name>
+        <description></description>
+        <newitemdefaultname>Uusi lähetä-nappi</newitemdefaultname>
+        <properties>
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+          <finalizeform>
+            <caption>Viimeistele lomake</caption>
+            <help>Viimeistele lomake</help>
+          </finalizeform>
+          <redirecttopage>
+            <caption>Näytä lomakkeen lähetyksen jälkeen tämä sivu</caption>
+            <help>Valitse lomakkeen lähetyksen jälkeen näytettävä sivu.</help>
+          </redirecttopage>
+        </properties>
+      </submitbuttonelementblock>
+      <formstepblock>
+        <name>Lomakkeen vaihe</name>
+        <description></description>
+        <newitemdefaultname>Uusi vaihe lomakkeelle</newitemdefaultname>
+        <properties>
+
+          <label>
+            <caption>Vaiheen otsikko</caption>
+            <help>Otsikko tälle lomakkeen vaiheelle.</help>
+          </label>
+          <description>
+            <caption>Kuvaus</caption>
+            <help>Näyttää kuvauksen lomakevaiheen otsikon alla.</help>
+          </description>
+
+          <attachedcontentlink>
+            <caption>Näytä vaihe toisessa sisällössä</caption>
+            <help>Sisällön, jossa tämä vaihe näytetään, tulee sisältää lomake.</help>
+          </attachedcontentlink>
+          <dependfield>
+            <caption>Näytä vain jos kenttä</caption>
+            <help>Lomakekentän tulee täyttää seuraava ehto, jotta tämä vaihe näytetään.</help>
+          </dependfield>
+          <dependcondition>
+            <caption>arvo...</caption>
+            <help>Riippuvuusehto</help>
+          </dependcondition>
+          <dependvalue>
+            <caption>seuraava arvo</caption>
+            <help>Riippuvuusehdon arvo.</help>
+          </dependvalue>
+        </properties>
+      </formstepblock>
+      <paragraphtextelementblock>
+        <name>Lomakkeen kenttien vahvistusteksti</name>
+        <description></description>
+        <newitemdefaultname>Uusi lomakkeen kenttien vahvistusteksti</newitemdefaultname>
+        <properties>
+
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+
+          <paragraphtext>
+            <caption>Teksti</caption>
+            <help>Näytä teksti valittujen mallisisältöjen kanssa</help>
+          </paragraphtext>
+        </properties>
+      </paragraphtextelementblock>
+      <urlelementblock>
+        <name>Url</name>
+        <description></description>
+        <newitemdefaultname>Uusi url</newitemdefaultname>
+        <properties>
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+        </properties>
+      </urlelementblock>
+      <rangeelementblock>
+        <name>Sarja</name>
+        <description></description>
+        <newitemdefaultname>Uusi sarja</newitemdefaultname>
+        <properties>
+
+          <description>
+            <caption see="/contenttypes/blockbase/properties/description/caption" />
+            <help see="/contenttypes/blockbase/properties/description/help" />
+          </description>
+
+          <predefinedvalue>
+            <help>Arvo (Min- ja Max-arvon välillä) liukunapin alkuasennon määrittämiseksi.</help>
+          </predefinedvalue>
+        </properties>
+      </rangeelementblock>
+    </contenttypes>
+  </language>
+</languages>
